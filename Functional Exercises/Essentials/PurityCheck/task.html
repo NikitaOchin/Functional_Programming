@@ -1,0 +1,31 @@
+You are given with an <code>increment</code> function which accepts
+<code>Integer</code> class and return version of <code>Integer</code> with its previous <code>value + 1</code>.
+<br>
+<br>
+For example:
+<br>
+<br>
+<code>increment(Integer(1))</code> should return <code>Integer(2)</code>
+<br>
+<br>
+<code>increment(Integer(2))</code> should return <code>Integer(3)</code>
+<br>
+<br>
+<code>increment(increment(Integer(1)))</code> should return <code>Integer(3)</code>
+<br>
+<br>
+The following should also be true
+<pre>
+  <code>
+    val input = Integer(1)
+    val res1 = increment(input)
+    val res2 = increment(input)
+
+    res1 == res2
+  </code>
+</pre>
+
+<b>Task:</b>
+<br>
+<br>
+Write a test that check if the given transformation is Pure.

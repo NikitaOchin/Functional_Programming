@@ -1,0 +1,35 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+  placeholders:
+  - offset: 80
+    length: 31
+    placeholder_text: raise Exception("Implement me")
+    initial_state:
+      length: 31
+      offset: 80
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: obk5iWBFs7q+eGfobsBNFvTgaenxAMzEMI+Q4h9j1GOoLhM9OStjGGQZ8nwRgYhyl0LSolEqlkWpFM58dYYdrQTLx0Dt2bVr4PI/FxwyUk5ZgpESRaOIw6yzPgHBRzb3JbggSJkA76rRJiC29dhu1UuP0aBvTEgI82sfvNFBEjrfVh1lFY0MJ2cUXc164ZT55vPg/KOOEysIfsgPWwv/vA==
+  encrypted_text: tJu0Wn36hpN60v2tw5RY9EU0A3BnDb6W4ZDmooOhGEKYApSfiBWzANms8mnwVX1koFwQTO0aTpAxPi6ei9yXDHRQ1r6ao67HYpLJCTHaXwhg0xAGZVOe5lgEuQ736E8+qFmJcJrp+mRphEtMxfbna6o/dFtXnus5cBqNb+V4EV4=
+  learner_created: false
+- name: tests/test_task.py
+  visible: true
+  encrypted_text: XIlL2u+4gqNTqO7La77Ydfms7BkrLbWl87NHLmtcxgXyLueWp/5zTGylNNCPHFruEWh6JjvdsnZWnAbW3JDgKukb/YJ67I5mg220xRVeDcmS1cGQ6SOO6TJjQcKuTTLrN5+vQrlUUY1Ze/fve4bfTb/ISy4d+pFQA+tLK8s99Xrrx3Ci1uYzoJ9Pk+fMcG76PT6ZIe5AEg99R7UbT6bX3CqV0luFV3xjvkB253cn6Z+6CZ4831LERAuUA42CSy5tZ27WDbjgDPTNMw8Ku2KBhJQNqKAN4rNZuDCech+5T3u5380b2Kb23VmXY9i7FPPN8lqVw6DrZUheK7s0LHmwbEsgP0sO1JdhpJwUDWPsc0mYCWCuFQcPGpyqBU9998GzumftgykOMxXG1TuhXQDHe5evoqV9A4jGnTcYuk5RA39Dvq/ltcrxWcLVIifPzpc75BdcWMXuTw3nh2deykRqepdazRO1xKk+bx/9PlkLK0k6RPNgbs8nIJczsy/0TaIWmQnfCposeMhfmI27orBrZpy0XVBbf8fYe4sXj+fVfqEyoS0TkU2dtSzk4sF3xM3kn52FMT0nIbRRCikofkvF3wnOQHfxojTQXJzz9XDRkPEbWG0QF9TH4m8vuzPQiS2AccitTMe3wuLB+Lt8ZKNrEUW3ywzkrPNXPKSyG1aJQt+awGaVqCCARtvrJpGzJpZvtLO49a6mxJYkasa5xvuKrnHP/VWC7qmN58SCBGYqrl0YaVf5pjP3EoDOqc3Zs7DgHjZQlyiLuPHdKHODUNiMcKHOwy91Mi7pFEI7U0t+LwT9pzBoVsmmJ68hMSfECrFXs9f87nRRRkKH4pjaG8Elh2dVwvCtB8FiMQwgu0QeMTfo4hvgQkxI6i2f5/MhvHzOn2FONuky1oZ3emkPOxYYfw==
+  learner_created: false
+- name: tests/__init__.py
+  visible: true
+  encrypted_text: BPrPxsoPO0ddRfXxWyDgbA==
+  learner_created: false
+- name: __init__.py
+  visible: true
+  encrypted_text: BPrPxsoPO0ddRfXxWyDgbA==
+  learner_created: false
+- name: task.md
+  visible: true
+  encrypted_text: dhNML8tMrQ34BKBcapREma2bp4cS/uScqb/sWA3e2C07KeG82jdBErSHQWV6U6tmOmIFT18Sln4AHlCdzWdw6KkFzx8JRXSRa7PWqyixYL8=
+  learner_created: false
+status: Unchecked
+record: -1
