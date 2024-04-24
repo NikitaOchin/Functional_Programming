@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.stock.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var stockChart = new CanvasJS.StockChart("chartContainer", {
+                title: {text: "WebSocket Data Loading in StockChart"},
+                charts: [{
+                    axisY2: {prefix: "$"},
+                    data: [{type: "candlestick", yValueFormatString: "$#,###.##", axisYType: "secondary", dataPoints: []}]
+                }],
+                navigator: {
+                    dynamicUpdate: true,
+                    slider: {minimum: new Date(2024, 4, 11), maximum: new Date(2024, 4, 14)}
+                }
+            });
+
+            var newsContainer = document.getElementById("newsContainer");
+
+            var ws = new WebSocket("ws://localhost:8080/stream");
+            ws.onopen = function () {
+                console.log("WebSocket Connection established");
+            };
+            ws.onmessage = function (event) {
+                var newData = JSON.parse(event.data);
+                if (newData.type === "STOCK") {
+                    updateGraph(newData.data);
+                } else if (newData.type === "NEWS") {
+                    updateNews(newData);
+                }
+            };
+            ws.onclose = function () {
+                console.log("WebSocket Connection closed");
+            };
+
+            function updateGraph(dataPoints) {
+                var newPoints = dataPoints.map(point => ({
+                    x: new Date(point.dateTime * 1000),
+                    y: [Number(point.open), Number(point.high), Number(point.low), Number(point.close)]
+                }));
+                stockChart.options.charts[0].data[0].dataPoints = newPoints;
+                stockChart.render();
+            }
+
+            function updateNews(newsData) {
+                var newsContainer = document.getElementById("newsContainer");
+                newsContainer.innerHTML = "";
+
+
+                var table = document.createElement("table");
+                table.style.width = '100%';
+                table.setAttribute('border', '1');
+                var thead = document.createElement("thead");
+                var headerRow = document.createElement("tr");
+
+
+                var titleHeader = document.createElement("th");
+                titleHeader.textContent = "News";
+                var shareHeader = document.createElement("th");
+                shareHeader.textContent = "Share Name";
+
+                headerRow.appendChild(titleHeader);
+                headerRow.appendChild(shareHeader);
+                thead.appendChild(headerRow);
+                table.appendChild(thead);
+
+                var tbody = document.createElement("tbody");
+
+                newsData.data.forEach(news => {
+                    var row = document.createElement("tr");
+                    var titleCell = document.createElement("td");
+                    var shareCell = document.createElement("td");
+
+                    titleCell.innerHTML = `<a href="${news.link}" target="_blank">${news.title}</a>`;
+                    shareCell.textContent = newsData.share || "No data";
+
+                    row.appendChild(titleCell);
+                    row.appendChild(shareCell);
+                    tbody.appendChild(row);
+                });
+
+                table.appendChild(tbody);
+                newsContainer.appendChild(table);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="chartContainer" style="height: 450px; width: 100%;"></div>
+<div id="newsContainer" style="padding: 20px;"></div>
+</body>
+</html>

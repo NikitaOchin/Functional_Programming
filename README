@@ -1,0 +1,52 @@
+# SEQUENCE FLOW DIAGRAM
+# | Main.py | -> Fetch prices -> | StockPricesTracker |
+#      |                                 |
+#      |                                 |
+#      |  <--- Return Stock Prices  <--- |
+#      |                                 |
+#      |  ---> Process Stock Prices ---> | StockPricesTracker |
+#      |                                           |
+#      |                                           |
+#      |   <------  Return Stock Prices   <------  |
+#      |                                           |
+#      |   ------>   Check on New Data    ------>  |
+#      |                                           |
+#      |   <------   Is there New Data?   ------>  |
+#      |             |                             |
+#      |    [YES]    |                             |
+#      |             |                             |
+#      |             |  ------------>               Send Prices to UI                ----------->              | UI |
+#      |             |                             |                                                           |
+#      |             |---> Check trend changes --->|                                                           |
+#      |             |                             |                                                           |
+#      |             |<--- Did trend change?  ---> |                                                           |
+#      |             |             |                                                                           |
+#      |             |    [YES]    |      --->     Fetch News   --->  | StockNewsTracker |                     |
+#      |             |             |                                           |                               |
+#      |             |             |      <---     Return News  <---           |                               |
+#      |             |             |                                           |                               |
+#      |             |             |      ------>    Process News  ------>     | StockPricesTracker |          |
+#      |             |             |                                                      |                    |
+#      |             |             |      <------    Returned Processed News  <------     |                    |
+#      |             |             |                                                                           |
+#      |             |             |     ------------>          Send News to UI       ----------->             | UI |
+#      |             |             |
+#      |             |    [NO]     |
+#      |             |             |
+#      |             |   Return    |
+#      |             | <---------- |
+#      |             |             |
+#      |             |             |
+#      |    [NO]     |             |
+#      |             |             |
+#      |   Return    |             |
+#      | <---------- |             |
+#      |             |             |
+#      |
+#      |
+#      |
+
+
+
+
+
